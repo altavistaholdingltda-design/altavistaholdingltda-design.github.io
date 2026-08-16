@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social LinguaGO</title>
+<meta name="description" content="Abra o hub social do LinguaGO — dupla, passaporte e convites.">
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(145deg,#0b1d2d,#164c70);font-family:system-ui;color:#fff;text-align:center}.card{max-width:520px;margin:24px;padding:36px;border-radius:28px;background:#ffffff12;border:1px solid #ffffff24}.btn{display:block;margin:14px auto;padding:15px 24px;border-radius:14px;background:#2b9ad0;color:#fff;text-decoration:none;font-weight:800}.secondary{background:#ffffff14}p{color:#d7e9f5;line-height:1.55}</style>
+</head><body><main class="card"><div style="font-size:5rem">🤝</div><h1>Hub social</h1><p>Convide um amigo, forme uma dupla e acompanhem a sequência juntos.</p>
+<a class="btn" id="open" href="#">Abrir no LinguaGO</a>
+<a class="btn secondary" id="store" href="#">Baixar no Google Play</a>
+</main>
+<script>
+const https='https://altavistaholdingltda-design.github.io/linguago-site/social/';
+const deep='linguago://social';
+const store='https://play.google.com/store/apps/details?id=com.linguago.nativo&referrer='+encodeURIComponent('destination=social&utm_source=social_web&utm_medium=web');
+document.getElementById('open').href=https;
+document.getElementById('store').href=store;
+document.getElementById('open').addEventListener('click',function(e){
+  e.preventDefault();
+  location.href=https;
+  setTimeout(function(){ location.href=deep; }, 500);
+});
+</script></body></html>
