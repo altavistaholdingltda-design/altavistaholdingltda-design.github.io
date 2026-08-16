@@ -1,3 +1,28 @@
-﻿<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Desafio diário LinguaGO</title>
+﻿<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Desafio diário LinguaGO</title>
 <meta name="description" content="Faça o desafio de pronúncia de 30 segundos do LinguaGO.">
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(145deg,#0b1d2d,#164c70);font-family:system-ui;color:#fff;text-align:center}.card{max-width:520px;margin:24px;padding:36px;border-radius:28px;background:#ffffff12;border:1px solid #ffffff24}.btn{display:block;margin:14px auto;padding:15px 24px;border-radius:14px;background:#2b9ad0;color:#fff;text-decoration:none;font-weight:800}.secondary{background:#ffffff14}p{color:#d7e9f5;line-height:1.55}</style></head><body><main class="card"><div style="font-size:5rem">⏱️</div><h1>Desafio de 30 segundos</h1><p>Ouça, repita e desafie um amigo a superar sua pronúncia.</p><a class="btn" href="linguago://daily">Abrir no LinguaGO</a><a class="btn secondary" href="https://play.google.com/store/apps/details?id=com.linguago.nativo&referrer=destination%3Ddaily%26utm_source%3Ddaily_share%26utm_medium%3Dweb">Baixar no Google Play</a></main></body></html>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(145deg,#0b1d2d,#164c70);font-family:system-ui;color:#fff;text-align:center}.card{max-width:520px;margin:24px;padding:36px;border-radius:28px;background:#ffffff12;border:1px solid #ffffff24}.btn{display:block;margin:14px auto;padding:15px 24px;border-radius:14px;background:#2b9ad0;color:#fff;text-decoration:none;font-weight:800}.secondary{background:#ffffff14}p{color:#d7e9f5;line-height:1.55}</style>
+</head><body><main class="card"><div style="font-size:5rem">⏱️</div><h1>Desafio de 30 segundos</h1><p>Ouça, repita e desafie um amigo a superar sua pronúncia.</p>
+<a class="btn" id="open" href="#">Abrir no LinguaGO</a>
+<a class="btn secondary" id="store" href="#">Baixar no Google Play</a>
+</main>
+<script>
+const q=new URLSearchParams(location.search);
+const raw=(q.get('code')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12);
+const httpsBase='https://altavistaholdingltda-design.github.io/linguago-site/daily/';
+const https=raw?`${httpsBase}?code=${encodeURIComponent(raw)}`:`${httpsBase}`;
+const deep=raw?`linguago://daily?code=${encodeURIComponent(raw)}`:'linguago://daily';
+const ref=encodeURIComponent(raw
+  ?`destination=daily&code=${raw}&utm_source=daily_share&utm_medium=web`
+  :'destination=daily&utm_source=daily_share&utm_medium=web');
+const store=`https://play.google.com/store/apps/details?id=com.linguago.nativo&referrer=${ref}`;
+document.getElementById('open').href=https;
+document.getElementById('store').href=store;
+document.getElementById('open').addEventListener('click',function(e){
+  e.preventDefault();
+  // App Link HTTPS first; soft fallback to custom scheme only (never auto-bounce to Play).
+  location.href=https;
+  setTimeout(function(){ location.href=deep; }, 500);
+});
+</script></body></html>

@@ -60,10 +60,8 @@
   <li><strong>Passaporte Social:</strong> código de convite, nome de exibição, dias de prática,
   sequência, XP semanal, dupla escolhida, carimbos e progresso da temporada. Esses dados são
   usados para convites, sequência conjunta e metas cooperativas; não incluem e-mail.</li>
-  <li><strong>Diagnóstico e uso:</strong> identificador de instalação, versão do app, modelo e
-  sistema do aparelho, telas e recursos utilizados, conclusão de lições, abertura do paywall,
-  eventos de compra e informações técnicas de falhas. Não enviamos frases faladas, gravações,
-  nome ou e-mail nesses eventos.</li>
+  <li><strong>Diagnóstico local:</strong> nesta versão, eventos de uso e falhas são registrados
+  apenas no aparelho. Não usamos serviço externo de Analytics ou Crashlytics.</li>
   <li><strong>Atribuição de convite:</strong> quando a instalação começa por um convite, o Google
   Play Install Referrer pode entregar ao aplicativo o código e a campanha presentes no link. O
   LinguaGO usa essa informação somente para recuperar o convite após a instalação.</li>
@@ -89,7 +87,7 @@ o endereço IP.</p>
   <li>Salvar, restaurar e sincronizar progresso.</li>
   <li>Exibir estatísticas, revisão, conquistas e liga.</li>
   <li>Operar convites, dupla, desafio diário, temporadas e recompensas cosméticas.</li>
-  <li>Medir ativação, retenção e funcionamento dos recursos para melhorar o produto.</li>
+  <li>Diagnosticar localmente o funcionamento dos recursos para melhorar o produto.</li>
   <li>Entregar recursos contratados no Google Play.</li>
   <li>Proteger o serviço contra abuso e diagnosticar falhas técnicas.</li>
 </ul>
@@ -97,8 +95,8 @@ o endereço IP.</p>
 <h2>5. Prestadores</h2>
 <p>Não vendemos dados pessoais. Usamos serviços necessários ao funcionamento:</p>
 <ul>
-  <li><strong>Supabase:</strong> autenticação e banco de dados; Google Cloud para OAuth Google,
-  Analytics, Remote Config e Crashlytics.</li>
+  <li><strong>Supabase:</strong> autenticação, sincronização e banco de dados.</li>
+  <li><strong>Google Cloud:</strong> OAuth Google e verificação de assinaturas do Google Play.</li>
   <li><strong>Google Play:</strong> processamento e gerenciamento de assinaturas.</li>
   <li><strong>Serviço de reconhecimento de voz do dispositivo:</strong> transcrição da fala.</li>
   <li><strong>Open-Meteo:</strong> clima das cidades fixas exibidas na interface.</li>

@@ -6,10 +6,17 @@
 <script>
 const q=new URLSearchParams(location.search), raw=(q.get('code')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12);
 document.getElementById('code').textContent=raw?`Código ${raw}`:'Convite LinguaGO';
-const deep=`linguago://invite?code=${encodeURIComponent(raw)}`;
+const httpsBase='https://altavistaholdingltda-design.github.io/linguago-site/invite/';
+const https=raw?`${httpsBase}?code=${encodeURIComponent(raw)}`:`${httpsBase}`;
+const deep=raw?`linguago://invite?code=${encodeURIComponent(raw)}`:'linguago://invite';
 const ref=encodeURIComponent(`invite=${raw}&utm_source=referral&utm_medium=share&utm_campaign=friend`);
 const store=`https://play.google.com/store/apps/details?id=com.linguago.nativo&referrer=${ref}`;
-document.getElementById('open').href=deep; document.getElementById('store').href=store;
-document.getElementById('open').addEventListener('click',function(){ setTimeout(function(){ location.href=store; }, 800); });
-
+document.getElementById('open').href=https;
+document.getElementById('store').href=store;
+document.getElementById('open').addEventListener('click',function(e){
+  e.preventDefault();
+  // App Link HTTPS first; soft fallback to custom scheme only (never auto-bounce to Play).
+  location.href=https;
+  setTimeout(function(){ location.href=deep; }, 500);
+});
 </script></body></html>
