@@ -1,0 +1,15 @@
+﻿<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convite LinguaGO</title><meta name="description" content="Forme uma dupla no LinguaGO e aprendam viajando juntos.">
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(145deg,#0b1d2d,#164c70);font-family:system-ui;color:#fff}.card{max-width:520px;margin:24px;padding:34px;border-radius:28px;background:#ffffff14;border:1px solid #ffffff24;text-align:center;box-shadow:0 24px 80px #0006}h1{font-size:2.4rem;margin:.2em}p{color:#d7e9f5;line-height:1.55}.code{font-size:1.7rem;font-weight:800;letter-spacing:.12em;color:#ffd166;margin:22px}a{display:block;padding:15px 22px;margin:12px 0;border-radius:14px;background:#2b9ad0;color:white;text-decoration:none;font-weight:800}.secondary{background:#ffffff14}</style>
+</head><body><main class="card"><div style="font-size:4rem">🌍</div><h1>Viaje em dupla</h1><p>Complete missões, mantenha uma sequência conjunta e conquiste carimbos semanais.</p><div id="code" class="code"></div><a id="open" href="#">Abrir no LinguaGO</a><a id="store" class="secondary" href="#">Baixar no Google Play</a><p style="font-size:.82rem">O convite só conecta os perfis depois que os dois participantes confirmam.</p></main>
+<script>
+const q=new URLSearchParams(location.search), raw=(q.get('code')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12);
+document.getElementById('code').textContent=raw?`Código ${raw}`:'Convite LinguaGO';
+const deep=`linguago://invite?code=${encodeURIComponent(raw)}`;
+const ref=encodeURIComponent(`invite=${raw}&utm_source=referral&utm_medium=share&utm_campaign=friend`);
+const store=`https://play.google.com/store/apps/details?id=com.linguago.nativo&referrer=${ref}`;
+document.getElementById('open').href=deep; document.getElementById('store').href=store;
+document.getElementById('open').addEventListener('click',function(){ setTimeout(function(){ location.href=store; }, 800); });
+
+</script></body></html>
