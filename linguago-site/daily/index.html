@@ -9,7 +9,7 @@
 </main>
 <script>
 const q=new URLSearchParams(location.search);
-const raw=(q.get('code')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12);
+const raw=(q.get('code')||'').toUpperCase().replace(/[^23456789ABCDEFGHJKLMNPQRSTUVWXYZ]/g,'').slice(0,12);
 const httpsBase='https://altavistaholdingltda-design.github.io/linguago-site/daily/';
 const https=raw?`${httpsBase}?code=${encodeURIComponent(raw)}`:`${httpsBase}`;
 const deep=raw?`linguago://daily?code=${encodeURIComponent(raw)}`:'linguago://daily';
