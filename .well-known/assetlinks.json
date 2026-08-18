@@ -4,10 +4,11 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.linguago.nativo",
-      "sha256_cert_fingerprints": [
+        "sha256_cert_fingerprints": [
         "41:B4:99:56:D1:5A:6C:F2:F9:8B:FF:84:F6:B5:61:78:58:67:6C:63:AA:2C:F4:16:AF:8D:DE:79:AD:06:F4:D5",
         "D7:A9:71:55:39:04:0D:8C:DD:9D:CA:5B:0F:6B:B3:E6:E3:7A:EC:AF:BF:B2:D7:A8:68:9A:6F:9A:B6:CE:44:F7",
-        "29:0B:E2:A0:DB:7F:43:73:8B:0B:D7:20:C0:57:71:3C:29:1D:39:16:86:64:F9:4E:63:E2:C6:A0:D4:FB:82:5D"
+        "29:0B:E2:A0:DB:7F:43:73:8B:0B:D7:20:C0:57:71:3C:29:1D:39:16:86:64:F9:4E:63:E2:C6:A0:D4:FB:82:5D",
+        "13:83:8F:7E:BD:FD:F3:05:60:84:22:62:62:59:53:7F:FC:7A:0D:F4:E5:F8:DA:4D:64:38:B6:5D:21:82:13:50"
       ]
     }
   }
