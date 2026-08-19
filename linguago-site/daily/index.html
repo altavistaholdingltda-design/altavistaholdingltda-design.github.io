@@ -12,7 +12,6 @@ const q=new URLSearchParams(location.search);
 const raw=(q.get('code')||'').toUpperCase().replace(/[^23456789ABCDEFGHJKLMNPQRSTUVWXYZ]/g,'').slice(0,12);
 const httpsBase='https://altavistaholdingltda-design.github.io/linguago-site/daily/';
 const https=raw?`${httpsBase}?code=${encodeURIComponent(raw)}`:`${httpsBase}`;
-const deep=raw?`linguago://daily?code=${encodeURIComponent(raw)}`:'linguago://daily';
 const ref=encodeURIComponent(raw
   ?`destination=daily&code=${raw}&utm_source=daily_share&utm_medium=web`
   :'destination=daily&utm_source=daily_share&utm_medium=web');
@@ -21,8 +20,7 @@ document.getElementById('open').href=https;
 document.getElementById('store').href=store;
 document.getElementById('open').addEventListener('click',function(e){
   e.preventDefault();
-  // App Link HTTPS first; soft fallback to custom scheme only (never auto-bounce to Play).
+  // App Link HTTPS only (release não registra linguago://).
   location.href=https;
-  setTimeout(function(){ location.href=deep; }, 500);
 });
 </script></body></html>
