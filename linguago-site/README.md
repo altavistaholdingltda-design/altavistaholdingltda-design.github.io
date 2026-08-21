@@ -2,14 +2,18 @@
 
 Hospedagem pública: **GitHub Pages** (páginas legais).
 
-Repo: https://github.com/altavistaholdingltda-design/linguago-site
+Repo: https://github.com/altavistaholdingltda-design/altavistaholdingltda-design.github.io (pasta `linguago-site/`)
 
 - Início: https://altavistaholdingltda-design.github.io/linguago-site/
 - Termos: https://altavistaholdingltda-design.github.io/linguago-site/termos/
 - Privacidade: https://altavistaholdingltda-design.github.io/linguago-site/privacidade/
 - Excluir conta: https://altavistaholdingltda-design.github.io/linguago-site/excluir-conta/
 
-Fonte local espelhada em `docs/` neste workspace. Para republicar, copie `docs/` para o repo `linguago-site` (branch `main`).
+Fonte local espelhada em `docs/` neste workspace. Para republicar:
+
+```bash
+./tools/publish-github-pages.sh
+```
 
 ## App Links
 

@@ -39,7 +39,7 @@
 </head>
 <body>
 <h1>Política de Privacidade</h1>
-<p class="updated">LinguaGO · Última atualização: 19 de agosto de 2026</p>
+<p class="updated">LinguaGO · Última atualização: 21 de agosto de 2026</p>
 
 <p>Esta Política explica como o <strong>LinguaGO</strong> trata dados pessoais. O controlador é
 <strong>Altavista Holding Ltda</strong>, contatável em
@@ -67,13 +67,20 @@
   LinguaGO usa essa informação somente para recuperar o convite após a instalação.</li>
   <li><strong>Assinatura:</strong> o aplicativo recebe do Google Play o estado necessário para
   liberar o Pro. Não recebemos dados completos de cartão.</li>
+  <li><strong>Professor Pro:</strong> quando você usa o tutor, tratamos a transcrição da fala,
+  até quatro mensagens recentes da sessão e o contexto pedagógico da lição (idioma, nível,
+  missão concluída e frases praticadas) para gerar correção e dica.</li>
 </ul>
 
 <h2>2. Microfone e reconhecimento de voz</h2>
-<p>O microfone é usado somente quando você inicia um exercício de pronúncia. O áudio é entregue
+<p>O microfone é usado somente quando você inicia um exercício de pronúncia ou uma conversa com
+o Professor Pro. O áudio é entregue
 ao serviço de reconhecimento de voz disponível no sistema operacional. O LinguaGO não salva a
 gravação em seus servidores. O provedor do reconhecimento pode processar dados conforme as
 configurações e políticas do próprio dispositivo ou serviço.</p>
+<p>No Professor Pro, o aplicativo envia somente a <strong>transcrição em texto</strong>, junto do
+contexto pedagógico e do histórico curto descritos acima, para uma Edge Function do Supabase, que
+consulta a API da OpenAI. O arquivo de áudio não é enviado ao Supabase nem à OpenAI.</p>
 
 <h2>3. Clima de cidades</h2>
 <p>A Home consulta a Open-Meteo usando coordenadas fixas da cidade associada ao idioma, como
@@ -89,6 +96,7 @@ o endereço IP.</p>
   <li>Operar convites, dupla, desafio diário, temporadas e recompensas cosméticas.</li>
   <li>Diagnosticar localmente o funcionamento dos recursos para melhorar o produto.</li>
   <li>Entregar recursos contratados no Google Play.</li>
+  <li>Gerar correções e dicas personalizadas no Professor Pro.</li>
   <li>Proteger o serviço contra abuso, fraude na liga e uso de software modificado, inclusive
   por meio de validações técnicas de integridade do dispositivo quando aplicável.</li>
 </ul>
@@ -100,6 +108,11 @@ o endereço IP.</p>
   <li><strong>Google Cloud:</strong> OAuth Google e verificação de assinaturas do Google Play.</li>
   <li><strong>Google Play:</strong> processamento e gerenciamento de assinaturas.</li>
   <li><strong>Serviço de reconhecimento de voz do dispositivo:</strong> transcrição da fala.</li>
+  <li><strong>OpenAI:</strong> geração das respostas do Professor Pro a partir da transcrição e
+  do contexto pedagógico. As chamadas usam a API com armazenamento de resposta desativado; por
+  padrão, dados da API não são usados para treinar modelos. A OpenAI pode conservar entradas e
+  saídas por até 30 dias para prevenção de abuso, salvo configuração contratual diferente ou
+  obrigação legal. Consulte os <a href="https://platform.openai.com/docs/models/default-usage-policies-by-endpoint">controles de dados da API</a>.</li>
   <li><strong>Open-Meteo:</strong> clima das cidades fixas exibidas na interface.</li>
 </ul>
 <p>O LinguaGO não exibe anúncios de terceiros.</p>
@@ -121,6 +134,9 @@ Registros técnicos que não forem removidos antes expiram automaticamente: limi
 travas de desafio diário em até 60 dias, eventos de atividade em até 90 dias e denúncias em até 180 dias.
 A exclusão da conta remove também esses registros vinculados ao identificador da conta, salvo eventual
 conservação estritamente exigida por lei.
+O LinguaGO não grava a transcrição nem a resposta do Professor Pro em seu banco de dados; durante a
+sessão, o histórico curto fica no aparelho. A retenção técnica temporária pela OpenAI segue o prazo
+descrito na seção de prestadores.
 Também é possível solicitar ajuda pela página <a href="../excluir-conta/">Excluir conta e dados</a> ou pelo e-mail de contato.
 A assinatura do Google Play deve ser cancelada separadamente.</p>
 
